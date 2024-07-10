@@ -18,7 +18,8 @@ return new class extends Migration {
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['alternative_id', 'user_id', 'question_id']);
+            $table->index(['alternative_id']);
+            $table->unique(['user_id', 'question_id']);
         });
     }
 
