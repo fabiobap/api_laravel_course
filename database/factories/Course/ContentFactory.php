@@ -2,10 +2,11 @@
 
 namespace Database\Factories\Course;
 
+use App\Models\Course\Content;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Course\Content>
+ * @extends Factory<Content>
  */
 class ContentFactory extends Factory
 {
@@ -17,7 +18,10 @@ class ContentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->randomHtml(6),
+            'order' => $this->faker->randomNumber(2),
+            'is_published' => $this->faker->boolean,
         ];
     }
 }

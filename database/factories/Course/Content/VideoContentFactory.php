@@ -2,10 +2,11 @@
 
 namespace Database\Factories\Course\Content;
 
+use App\Models\Course\Content\VideoContent;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Course\Content\VideoContent>
+ * @extends Factory<VideoContent>
  */
 class VideoContentFactory extends Factory
 {
@@ -17,7 +18,8 @@ class VideoContentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'youtube_id' => $this->faker->randomElement(['p_xlxGKEQGQ', 'Qcb5gJgLjIQ', 'IeyNd0KLpsw', '6rrb9zAVTgM']),
+            'metadata' => []
         ];
     }
 }

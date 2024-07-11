@@ -2,10 +2,11 @@
 
 namespace Database\Factories\Course\Content;
 
+use App\Models\Course\Content\TextContent;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Course\Content\TextContent>
+ * @extends Factory<TextContent>
  */
 class TextContentFactory extends Factory
 {
@@ -17,7 +18,7 @@ class TextContentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'content' => $this->faker->randomHtml(6)
         ];
     }
 }

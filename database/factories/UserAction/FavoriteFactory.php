@@ -2,10 +2,11 @@
 
 namespace Database\Factories\UserAction;
 
+use App\Models\UserAction\Favorite;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserAction\Favorite>
+ * @extends Factory<Favorite>
  */
 class FavoriteFactory extends Factory
 {

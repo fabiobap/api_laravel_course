@@ -2,10 +2,11 @@
 
 namespace Database\Factories\UserAction;
 
+use App\Models\UserAction\Comment;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserAction\Comment>
+ * @extends Factory<Comment>
  */
 class CommentFactory extends Factory
 {
@@ -17,7 +18,8 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'comment'=>$this->faker->sentence,
+            'is_published' => $this->faker->boolean,
         ];
     }
 }

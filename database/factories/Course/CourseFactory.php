@@ -2,10 +2,12 @@
 
 namespace Database\Factories\Course;
 
+use App\Models\Course\Course;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Course\Course>
+ * @extends Factory<Course>
  */
 class CourseFactory extends Factory
 {
@@ -17,7 +19,9 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => $title = $this->faker->sentence(),
+            'slug' => Str::slug($title),
+            'description' => $this->faker->text(500)
         ];
     }
 }

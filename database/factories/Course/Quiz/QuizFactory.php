@@ -2,10 +2,12 @@
 
 namespace Database\Factories\Course\Quiz;
 
+use App\Models\Course\Quiz\Quiz;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Course\Quiz\Quiz>
+ * @extends Factory<Quiz>
  */
 class QuizFactory extends Factory
 {
@@ -17,7 +19,9 @@ class QuizFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => $title = $this->faker->sentence(),
+            'slug' => Str::slug($title),
+            'description' => $this->faker->paragraph(),
         ];
     }
 }

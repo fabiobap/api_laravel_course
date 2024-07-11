@@ -2,10 +2,11 @@
 
 namespace Database\Factories\Course;
 
+use App\Models\Course\Topic;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Course\Topic>
+ * @extends Factory<Topic>
  */
 class TopicFactory extends Factory
 {
@@ -17,7 +18,8 @@ class TopicFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => $this->faker->sentence(),
+            'order' => $this->faker->randomNumber(2),
         ];
     }
 }

@@ -2,10 +2,11 @@
 
 namespace Database\Factories\UserAction;
 
+use App\Models\UserAction\ViewContent;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserAction\ViewContent>
+ * @extends Factory<ViewContent>
  */
 class ViewContentFactory extends Factory
 {

@@ -2,10 +2,11 @@
 
 namespace Database\Factories\Course\Quiz;
 
+use App\Models\Course\Quiz\Question;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Course\Quiz\Question>
+ * @extends Factory<Question>
  */
 class QuestionFactory extends Factory
 {
@@ -17,7 +18,9 @@ class QuestionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->paragraph(),
+            'order' => $this->faker->randomNumber(2),
         ];
     }
 }
