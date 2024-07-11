@@ -2,14 +2,16 @@
 
 namespace App\Models\Traits;
 
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Support\Str;
 
 trait ResourceUuidKey
 {
-    use HasUuids;
-
-    public function newUniqueId(): array
+    protected static function boot(): void
     {
-        return ['resource_key'];
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->resource_key = Str::uuid()->toString();
+        });
     }
 }
