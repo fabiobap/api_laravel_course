@@ -12,6 +12,8 @@ class Answer extends Pivot
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'answers';
+
     protected $fillable = [
         'alternative_id',
         'question_id',

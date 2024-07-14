@@ -17,6 +17,8 @@ class ViewContent extends Pivot
         'content_id',
     ];
 
+    protected $table = 'view_contents';
+
     protected function casts(): array
     {
         return [

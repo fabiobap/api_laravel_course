@@ -5,7 +5,6 @@ namespace App\Models\Course;
 use App\Models\Traits\ResourceUuidKey;
 use App\Models\User;
 use App\Models\UserAction\Comment;
-use App\Models\UserAction\Enrol;
 use App\Models\UserAction\Favorite;
 use App\Models\UserAction\ViewContent;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -64,6 +63,11 @@ class Content extends Model
             User::class, 'favorites'
         )->using(Favorite::class)
             ->withTimestamps();
+    }
+
+    public function topic(): BelongsTo
+    {
+        return $this->belongsTo(Topic::class);
     }
 
     public function views(): BelongsToMany

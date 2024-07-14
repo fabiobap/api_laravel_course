@@ -20,6 +20,8 @@ class Comment extends Pivot
         'is_published'
     ];
 
+    protected $table = 'comments';
+
     protected function casts(): array
     {
         return [

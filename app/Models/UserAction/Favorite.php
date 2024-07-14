@@ -17,6 +17,8 @@ class Favorite extends Pivot
         'content_id',
     ];
 
+    protected $table = 'favorites';
+
     protected function casts(): array
     {
         return [
