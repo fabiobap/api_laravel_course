@@ -2,6 +2,7 @@
 
 namespace Database\Factories\Course;
 
+use App\Models\Course\Course;
 use App\Models\Course\Topic;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,6 +21,7 @@ class TopicFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'order' => $this->faker->randomNumber(2),
+            'course_id' => Course::factory(),
         ];
     }
 }

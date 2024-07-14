@@ -3,6 +3,7 @@
 namespace Database\Factories\Course;
 
 use App\Models\Course\Content;
+use App\Models\Course\Topic;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,6 +23,9 @@ class ContentFactory extends Factory
             'description' => $this->faker->randomHtml(6),
             'order' => $this->faker->randomNumber(2),
             'is_published' => $this->faker->boolean,
+            'contentable_id' => Content\TextContent::factory(),
+            'contentable_type' => Content\TextContent::class,
+            'topic_id' => Topic::factory(),
         ];
     }
 }
