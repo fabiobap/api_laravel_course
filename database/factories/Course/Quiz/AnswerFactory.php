@@ -2,7 +2,10 @@
 
 namespace Database\Factories\Course\Quiz;
 
+use App\Models\Course\Quiz\Alternative;
 use App\Models\Course\Quiz\Answer;
+use App\Models\Course\Quiz\Question;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +21,9 @@ class AnswerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'alternative_id' => Alternative::factory(),
+            'question_id' => Question::factory(),
+            'user_id' => User::factory(),
         ];
     }
 }

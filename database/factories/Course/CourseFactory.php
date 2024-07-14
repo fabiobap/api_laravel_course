@@ -2,7 +2,9 @@
 
 namespace Database\Factories\Course;
 
+use App\Models\Course\Category;
 use App\Models\Course\Course;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -21,7 +23,9 @@ class CourseFactory extends Factory
         return [
             'title' => $title = $this->faker->sentence(),
             'slug' => Str::slug($title),
-            'description' => $this->faker->text(500)
+            'description' => $this->faker->text(500),
+            'category_id' => Category::factory(),
+            'user_id' => User::factory(),
         ];
     }
 }

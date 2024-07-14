@@ -3,6 +3,7 @@
 namespace Database\Factories\Course\Quiz;
 
 use App\Models\Course\Quiz\Alternative;
+use App\Models\Course\Quiz\Question;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +21,7 @@ class AlternativeFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'order' => $this->faker->randomNumber(2),
-            'is_published' => $this->faker->boolean,
+            'question_id' => Question::factory(),
         ];
     }
 }

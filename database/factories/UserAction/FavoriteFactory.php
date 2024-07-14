@@ -2,6 +2,8 @@
 
 namespace Database\Factories\UserAction;
 
+use App\Models\Course\Content;
+use App\Models\User;
 use App\Models\UserAction\Favorite;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,7 +20,8 @@ class FavoriteFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::factory(),
+            'content_id' => Content::factory(),
         ];
     }
 }

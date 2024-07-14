@@ -3,7 +3,6 @@
 namespace App\Models\Course;
 
 use App\Models\Traits\BelongsToUser;
-use App\Models\Traits\ResourceUuidKey;
 use App\Models\User;
 use App\Models\UserAction\Enrol;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,10 +11,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Course extends Model
 {
-    use BelongsToUser, HasFactory, ResourceUuidKey, SoftDeletes;
+    use BelongsToUser, HasFactory, SoftDeletes;
 
     protected $fillable = [
         'title',
@@ -31,6 +31,16 @@ class Course extends Model
             'category_id' => 'integer',
             'user_id' => 'integer',
         ];
+    }
+
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::creating(function (Model $model) {
+            $model->user_id = auth()->id();
+            $model->resource_key = Str::uuid()->toString();
+        });
     }
 
     public function category(): BelongsTo
