@@ -2,9 +2,15 @@
 
 namespace App\DTO;
 
-class CourseDTO
+readonly class CourseDTO
 {
-    public function __construct(int $user_id, string $description, string $title, string $slug, ?int $category_id = null)
+    public function __construct(
+        public int    $user_id,
+        public string $description,
+        public string $title,
+        public string $slug,
+        public ?int   $category_id = null
+    )
     {
     }
 
