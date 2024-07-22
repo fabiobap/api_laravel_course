@@ -2,9 +2,9 @@
 
 namespace App\DTO;
 
-class FavoriteDTO
+readonly class FavoriteDTO
 {
-    public function __construct(int $content_id, int $user_id)
+    public function __construct(public int $content_id, public int $user_id)
     {
     }
 

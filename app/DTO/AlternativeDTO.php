@@ -2,9 +2,14 @@
 
 namespace App\DTO;
 
-class AlternativeDTO
+readonly class AlternativeDTO
 {
-    public function __construct(string $title, int $question_id, bool $is_correct, ?int $order = null)
+    public function __construct(
+        public string $title,
+        public int    $question_id,
+        public ?bool  $is_correct = false,
+        public ?int   $order = null
+    )
     {
     }
 

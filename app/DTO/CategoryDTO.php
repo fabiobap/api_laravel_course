@@ -2,9 +2,9 @@
 
 namespace App\DTO;
 
-class CategoryDTO
+readonly class CategoryDTO
 {
-    public function __construct(string $name)
+    public function __construct(public string $name)
     {
 
     }

@@ -2,9 +2,9 @@
 
 namespace App\DTO;
 
-class TextContentDTO
+readonly class TextContentDTO
 {
-    public function __construct(string $content)
+    public function __construct(public string $content)
     {
     }
 

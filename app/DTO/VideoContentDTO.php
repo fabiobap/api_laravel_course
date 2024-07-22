@@ -2,9 +2,12 @@
 
 namespace App\DTO;
 
-class VideoContentDTO
+readonly class VideoContentDTO
 {
-    public function __construct(string $youtube_id, ?array $metadata = null)
+    public function __construct(
+        public string $youtube_id,
+        public ?array $metadata = null
+    )
     {
     }
 

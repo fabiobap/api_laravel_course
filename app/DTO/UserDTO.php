@@ -2,9 +2,13 @@
 
 namespace App\DTO;
 
-class UserDTO
+readonly class UserDTO
 {
-    public function __construct(string $name, string $email, ?string $password = null)
+    public function __construct(
+        public string $name,
+        public string $email,
+        public ?string $password = null
+    )
     {
 
     }

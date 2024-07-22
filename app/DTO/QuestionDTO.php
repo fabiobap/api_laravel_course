@@ -2,9 +2,14 @@
 
 namespace App\DTO;
 
-class QuestionDTO
+readonly class QuestionDTO
 {
-    public function __construct(string $description, string $title, int $quiz_id, ?int $order = null)
+    public function __construct(
+        public string $description,
+        public string $title,
+        public int $quiz_id,
+        public ?int $order = null
+    )
     {
     }
 

@@ -2,9 +2,13 @@
 
 namespace App\DTO;
 
-class TopicDTO
+readonly class TopicDTO
 {
-    public function __construct(string $title, int $course_id, ?int $order = null)
+    public function __construct(
+        public string $title,
+        public int $course_id,
+        public ?int $order = null
+    )
     {
     }
 

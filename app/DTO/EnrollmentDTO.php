@@ -2,9 +2,9 @@
 
 namespace App\DTO;
 
-class EnrollmentDTO
+readonly class EnrollmentDTO
 {
-    public function __construct(int $course_id, int $user_id)
+    public function __construct(public int $course_id, public int $user_id)
     {
     }
 

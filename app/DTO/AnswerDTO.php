@@ -2,9 +2,9 @@
 
 namespace App\DTO;
 
-class AnswerDTO
+readonly class AnswerDTO
 {
-    public function __construct(int $alternative_id, int $question_id, int $user_id)
+    public function __construct(public int $alternative_id, public int $question_id, public int $user_id)
     {
     }
 

@@ -2,9 +2,14 @@
 
 namespace App\DTO;
 
-class CommentDTO
+readonly class CommentDTO
 {
-    public function __construct(int $content_id, int $user_id, string $comment, bool $is_published)
+    public function __construct(
+        public int    $content_id,
+        public int    $user_id,
+        public string $comment,
+        public ?bool   $is_published = false
+    )
     {
     }
 

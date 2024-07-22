@@ -2,9 +2,14 @@
 
 namespace App\DTO;
 
-class QuizDTO
+readonly class QuizDTO
 {
-    public function __construct(int $course_id, string $description, string $title, string $slug)
+    public function __construct(
+        public int    $course_id,
+        public string $description,
+        public string $title,
+        public string $slug
+    )
     {
     }
 
